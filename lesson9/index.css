@@ -1,0 +1,20 @@
+.emojis {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    justify-content: center;
+
+    .emoji-block {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: center;
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 40px;
+        }
+    }
+}
