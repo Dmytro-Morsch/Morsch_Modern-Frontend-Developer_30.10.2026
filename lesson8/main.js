@@ -33,7 +33,7 @@ class Car {
     }
 
     toString() {
-        return `Mark: ${this.mark};\nModel: ${this.model};\nColor: ${this.color};\nOwner: ${this.owner.name}, ${this.owner.age}`;
+        return `Mark: ${this.mark};\nModel: ${this.model};\nColor: ${this.color};\nOwner: ${this.owner ? this.owner.name + ', ' + this.owner.age : 'not set'}`;
     }
 }
 
