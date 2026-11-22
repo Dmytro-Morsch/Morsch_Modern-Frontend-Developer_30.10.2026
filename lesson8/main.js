@@ -14,7 +14,14 @@ class Car {
         this.mark = mark;
         this.model = model;
         this.color = color;
-        this.owner = owner;
+    }
+
+    setOwner(user) {
+        if (user instanceof User) {
+            this.owner = user;
+        } else {
+            console.log(`Argument '${user}' is not instance of class User`);
+        }
     }
 
     start() {
@@ -41,6 +48,7 @@ function promptRequired(message, emptyError) {
     }
     return value.trim();
 }
+
 function main() {
     const userName = promptRequired('Enter user name:', 'Username cannot be empty');
     if (!userName) return;
@@ -72,7 +80,8 @@ function main() {
     if (!carColor) return;
 
     const user = new User(userName, userAge);
-    const car = new Car(carMark, carModel, carColor, user);
+    const car = new Car(carMark, carModel, carColor);
+    car.setOwner(user);
 
     alert(car.toString());
 }
